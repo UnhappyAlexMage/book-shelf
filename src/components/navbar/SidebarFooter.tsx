@@ -4,7 +4,7 @@ import { FiLogOut, FiMail, FiPhone, FiGithub } from "react-icons/fi";
 
 export default function SidebarFooter() {
     return (
-        <footer className="mt-auto border-t border-gray-200 bg-white px-6 py-5">
+        <footer className="mt-auto min-h-3/11 border-t border-gray-200 bg-white px-6 py-5">
 
             <div className="space-y-3">
                 <a

@@ -9,6 +9,7 @@ import type { ListLi } from "../../entities/typesUI";
 type HeaderProps = {
     nameButton: string;
     onOpenSidebar: () => void;
+    toLink: string;
 };
 
 let listArray: ListLi[] = [
@@ -53,6 +54,7 @@ export default function Header(props: HeaderProps) {
                 <section className="flex items-center gap-3">
                     <GeneralButton 
                         label={props.nameButton}
+                        toLink={props.toLink}
                     />
                     <button
                         onClick={props.onOpenSidebar}

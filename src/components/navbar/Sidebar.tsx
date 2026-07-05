@@ -2,13 +2,16 @@ import React from "react";
 
 import SidebarNav from "./SidebarNav";
 import SidebarFooter from "./SidebarFooter";
+import type { BookStatus } from "../../entities/types";
 
 type SidebarProps = {
     open: boolean;
     onClose: () => void;
+    currentStatusSidebar: BookStatus;
+    setStatusSidebar: (status: BookStatus) => void;
 };
 
-export default function Sidebar({ open, onClose }: SidebarProps) {
+export default function Sidebar({ open, onClose, currentStatusSidebar, setStatusSidebar }: SidebarProps) {
     return (
         <React.Fragment>
             {open && (
@@ -30,7 +33,10 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
                         </h2>
                     </header>
                     <div className="flex-1 overflow-y-auto">
-                        <SidebarNav />
+                        <SidebarNav
+                            currentStatusSidebar={currentStatusSidebar}
+                            setStatusSidebar={setStatusSidebar}
+                        />
                     </div>
                     <SidebarFooter />
                 </div>
