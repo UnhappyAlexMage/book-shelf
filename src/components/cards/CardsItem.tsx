@@ -19,8 +19,8 @@ export default function CardsItem(props: PropsCardsItem) {
     return (
         <React.Fragment>
             {props.filteredBooks?.map((book) => (
-                <div className="flex w-full max-w-sm flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
-                    <div key={book.bookId}>
+                <div key={book.bookId} className="flex w-full max-w-sm flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md">
+                    <div className="">
                         <div className="relative aspect-4.5/4 w-full overflow-hidden bg-slate-100">
                             <img
                                 className="h-full w-full object-contain"
