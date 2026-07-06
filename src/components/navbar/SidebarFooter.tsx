@@ -24,8 +24,9 @@ export default function SidebarFooter() {
     return (
         <footer className="mt-auto min-h-3/11 border-t border-gray-200 bg-white px-6 py-5">
             <div className="space-y-3">
-                {dataContacs.map((contact) => (
-                    <ContacsLink 
+                {dataContacs.map((contact, index) => (
+                    <ContacsLink
+                        key={index}
                         label={contact.label}
                         href={contact.href}
                         icon={contact.icon}
