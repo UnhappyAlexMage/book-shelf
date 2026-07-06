@@ -1,6 +1,4 @@
 import type { ReactNode } from "react";
-import type { IconType } from "react-icons";
-
 
 interface PropsCardsItem {
     icon: ReactNode;
