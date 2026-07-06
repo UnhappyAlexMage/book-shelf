@@ -23,11 +23,9 @@ export const libraryBooks: LibraryBook[] = [
         authors: ["Фёдор Достоевский"],
         imageBook: "https://covers.openlibrary.org/b/id/12728325-L.jpg",
         reccomendedImages: [
-            "https://covers.openlibrary.org/b/id/12728324-L.jpg",
             "https://covers.openlibrary.org/b/id/12728325-L.jpg",
             "https://covers.openlibrary.org/b/id/12728326-L.jpg",
             "https://covers.openlibrary.org/b/id/12728327-L.jpg",
-            "https://covers.openlibrary.org/b/id/12728328-L.jpg"
         ],
         status: "Чтение",
         startedAt: "2026-07-14T10:15:00Z",
