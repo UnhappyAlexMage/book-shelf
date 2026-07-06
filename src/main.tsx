@@ -9,10 +9,18 @@ import router from './routes/router.tsx';
 
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
+async function enableMocking() {
+    if (import.meta.env.DEV || import.meta.env.VITE_ENABLE_MOCKS === 'true') {
+        const { worker } = await import('./mocks/browser.ts')
+        await worker.start({onUnhandledRequest: 'bypass'})
+        console.log('MSW worker запущен');
+    };
+};
+
+enableMocking().then(() => {createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <QueryClientProvider client={queryClient}>
             <RouterProvider router={router} />
         </QueryClientProvider>
-    </StrictMode>,
-)
+    </StrictMode>,        
+)});
