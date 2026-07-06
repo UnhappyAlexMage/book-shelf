@@ -1,7 +1,9 @@
 import { handlerGetAllBooks, handlerGetBooksId } from "./handlers/handelrsBooks";
-import { handlerGetAllUsers } from "./handlers/handlersUser";
+import { handlerGetAllUsers, handlerLogin } from "./handlers/handlersUser";
+import { handlerGetUserRecords, handlerCreateUserRecord } from "./handlers/handlersRecord";
 
 export const handlers = [
     handlerGetAllBooks, handlerGetBooksId,
-    handlerGetAllUsers,
+    handlerGetAllUsers, handlerLogin,
+    handlerGetUserRecords, handlerCreateUserRecord,
 ];
