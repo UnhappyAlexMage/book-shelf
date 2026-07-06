@@ -1,12 +1,14 @@
 import axios from "axios";
-import type { User } from "../../entities/types";
-import { dataUsers } from "../constants";
+import type { Record } from "../../entities/types.ts";
+import { dataAllRecord } from "../constants";
 
-export const getAllBooks = async () : Promise<User[]> => {
+export const getAllRecords = async (authorId: string | undefined) : Promise<Record[]> => {
     try {
-        const response = await axios.get<User[]>(`${dataUsers}`);
+        const response = await axios.get<Record[]>(`${dataAllRecord}`, { params: { authorId} });
+        console.log("ФРОНТЕНД: Ответ сервера пришел успешно:", response.data);
         return response.data;
     } catch(error) {
+        console.error("ФРОНТЕНД: Произошла ошибка запроса:", error);
         if (axios.isAxiosError(error)) {
             if (error.response) {
                 const statusServer = error.response.status;
@@ -18,6 +20,7 @@ export const getAllBooks = async () : Promise<User[]> => {
             }
 
         }
-        throw new Error("Произошла ошибка в getAllUsers");
+        throw new Error("Произошла ошибка в getAllRecords");
     }
 };
+

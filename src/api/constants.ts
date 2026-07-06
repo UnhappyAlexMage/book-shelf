@@ -1,4 +1,9 @@
 export const dataUsers = '/api/users';
 
 export const dataAllBooks = '/api/allbooks';
-export const dataGetBooksToid = '/api/allbooks/:BookId';
+export const dataDetails = '/api/detailsBookPage';
+
+export const dataLogin = '/api/login';
+
+export const dataAllRecord = '/api/allrecord';
+export const dataNewRecord = '/api/addrecord';
