@@ -1,77 +1,65 @@
-# React + TypeScript + Vite
+# Book shelf
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Проект реализован как Frontend-приложение с использованием MSW для эмуляции backend API и построен с упором на архитектуру, масштабируемость и бизнес-логику.
 
-Currently, two official plugins are available:
+---
+# 1. Как запустить прооект:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Локальный запуск
 
-## React Compiler
+Чтобы запустить проект локально, выполните следующие команды в директории `book-shelf`:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+```bash
+# Установка зависимостей:
+npm install
 
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+# Запуск dev-сервера:
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+### Отсановка проекта:
+```txt
+Ctrl + C
 ```
+
+# 2. Используемый стек:
+
+## Frontend:
+
+- TailwindCSS
+- TypeScript
+- Axios
+- React
+- Vite
+- React Icons
+- React Router
+- TanStack Query
+- Zustand
+- Yup + React Hook Form
+- OpenLayers
+
+---
+
+## Mock Backend
+
+- MSW (Mock Service Worker)
+
+---
+
+# 3. Описание архитектуры:
+
+```bash
+src/
+├── api/              # Слой работы с API: Axios + TanStack Query.
+├── assets/           # Статические ресурсы приложения.
+├── components/       # Переиспользуемые UI-компоненты.
+├── entities/         # Бизнес-сущности и типы приложения.
+├── hooks/            # Кастомные React hooks: дребезг для поиска и получение роли
+├── mocks/            # Mock backend на базе mock data, MSW: handlers, fake API endpoints
+├── pages/            # Страницы приложения: основные блоки для использования в routes
+├── routes/           # Конфигурация маршрутизации приложения: React Router routes, lazy loading, protected routes, error boundaries.
+├── shared/           # Общие утилиты и переиспользуемая логика: lib/ ("Псевдо-коллекици библиотек" для корректного отображения данных), ui/ (Переиспользуемые компоненты), validators/ (Для валидации данных).
+├── store/            # Создание глобального клиентского хранилища и управление им, через астомные хуки.
+```
+
+---
