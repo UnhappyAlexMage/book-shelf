@@ -2,12 +2,6 @@ import { createBrowserRouter } from "react-router";
 
 import App from "../App";
 
-const HomePage = () => import('../pages/LibraryPage').then(module => ({ Component: module.default }));
-const MapPage = () => import('../pages/MapPage').then(module => ({ Component: module.default }));
-const AboutPage = () => import('../pages/AboutPage').then(module => ({ Component: module.default }));
-const LoginPage = () => import('../pages/LoginPage').then(module => ({ Component: module.default }));
-const DetailsBookPage = () => import('../pages/DetailsBookPage').then(module => ({ Component: module.default }));
-
 const router = createBrowserRouter([
     {
         path: '/',
@@ -16,7 +10,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                lazy: HomePage,
+                lazy: () => import('../pages/LibraryPage').then(module => ({ Component: module.default })),
                 handle: { 
                     title: '', 
                     showInMenu: true 
@@ -24,7 +18,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'map',
-                lazy: MapPage,
+                lazy: () => import('../pages/MapPage').then(module => ({ Component: module.default })),
                 handle: { 
                     title: 'map', 
                     showInMenu: true 
@@ -32,7 +26,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'about',
-                lazy: AboutPage,
+                lazy: () => import('../pages/AboutPage').then(module => ({ Component: module.default })),
                 handle: { 
                     title: 'about', 
                     showInMenu: true 
@@ -40,7 +34,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'login',
-                lazy: LoginPage,
+                lazy: () => import('../pages/LoginPage').then(module => ({ Component: module.default })),
                 handle: { 
                     title: 'login', 
                     showInMenu: true 
@@ -48,7 +42,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'detailsBookPage/:bookId',
-                lazy: DetailsBookPage,
+                lazy: () => import('../pages/DetailsBookPage').then(module => ({ Component: module.default })),
                 handle: { 
                     title: 'details selected book',
                     showInMenu: true
