@@ -16,8 +16,8 @@ export default function SidebarFooter() {
     const user = useAuthStore((state) => state.user);
     const logoutInStore = useAuthStore((state) => state.logout);
 
-    const handleClick = (event: any) => {
-        event?.preventDefault();
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
         logoutInStore();
     };
 
