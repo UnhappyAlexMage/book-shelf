@@ -18,7 +18,7 @@ interface PropsSidevarNav {
     setStatusSidebar: (status: BookStatus) => void;
 };
 
-let menuItems: ATypesNav[] = [
+const menuItems: ATypesNav[] = [
     { id: 1, current: "Все книги", label: "Все книги", icon: PiBooksBold, uniqueColorText: 'text-sky-600', bookStatus: 'Все книги'},
     { id: 2, current: "Чтение", label: "Чтение", icon: FaReadme, uniqueColorText: 'text-sky-600', bookStatus: 'Чтение'},
     { id: 3, current: "Прочитанные", label: "Прочитанные", icon: AiOutlineFileDone, uniqueColorText: 'text-sky-600', bookStatus: 'Прочитанные'},

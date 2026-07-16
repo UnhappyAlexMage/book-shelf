@@ -14,7 +14,7 @@ type HeaderProps = {
     toLink: string;
 };
 
-let listArray: ListLi[] = [
+const listArray: ListLi[] = [
     {id: 1, name: "Для вас", toLink: '/'},
     {id: 2, name: "Карта", toLink: '/map'},
     {id: 3, name: "О проекте", toLink: '/about'}
