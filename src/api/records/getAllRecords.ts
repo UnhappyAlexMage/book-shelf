@@ -13,14 +13,14 @@ export const getAllRecords = async (authorId: string | undefined) : Promise<Reco
             if (error.response) {
                 const statusServer = error.response.status;
                 const messangeServer = error.response.data?.message || "Ошибка сервера";
-                throw new Error(`Ошибка ${statusServer}: ${messangeServer}`);
+                throw new Error(`Ошибка ${statusServer}: ${messangeServer}`, { cause: error });
             } 
             else if (error.request) {
-                throw new Error(`Ошибка соединения с сервером ${error.status}`);
+                throw new Error(`Ошибка соединения с сервером ${error.status}`, { cause: error });
             }
 
         }
-        throw new Error("Произошла ошибка в getAllRecords");
+        throw new Error("Произошла ошибка в getAllRecords", { cause: error });
     }
 };
 
