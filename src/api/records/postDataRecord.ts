@@ -10,15 +10,15 @@ export const postDataRecord = async (formData: Record) : Promise<Record> => {
         if (axios.isAxiosError(error)) {
             if (error.response) {
                 const statusServer = error.response.status;
-                const messangeServer = error.response.data?.message || "Ошибка сервера";
+                const messageServer = error.response.data?.message || "Ошибка сервера";
                 console.log(statusServer);
-                throw new Error(`${messangeServer}`);
+                throw new Error(`Ошибка ${statusServer}: ${messageServer}`, { cause: error });
             } 
             else if (error.request) {
-                throw new Error(`Ошибка соединения с сервером ${error.status}`);
+                throw new Error(`Ошибка соединения с сервером ${error.status}`, { cause: error });
             }
 
         }
-        throw new Error("Произошла ошибка в postDataRecord");
+        throw new Error("Произошла ошибка в postDataRecord", { cause: error });
     }
 };
