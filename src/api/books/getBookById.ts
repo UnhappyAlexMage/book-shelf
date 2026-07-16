@@ -12,14 +12,14 @@ export const getBookById = async (params: string) : Promise<LibraryBook> => {
                 const statusServer = error.response.status;
                 const messangeServer = error.response.data?.message || "Ошибка сервера";
                 console.log(statusServer);
-                throw new Error(`${messangeServer}`);
+                throw new Error(`${messangeServer}`, { cause: error });
             } 
             else if (error.request) {
-                throw new Error(`Ошибка соединения с сервером ${error.status}`);
+                throw new Error(`Ошибка соединения с сервером ${error.status}`, { cause: error });
             }
 
         }
-        throw new Error("Произошла ошибка в getAllUsers");
+        throw new Error("Произошла ошибка в getAllUsers", { cause: error });
     }
 };
 
