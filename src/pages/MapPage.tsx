@@ -76,20 +76,20 @@ export default function MapPage () {
 
     return (
         <div className="p-10 h-full w-full">
-        <div className="flex mb-3 gap-5">
-            <CheckBoxForMap 
-                label="Показать точки"
-                type="checkbox"
-                checked={showPoints}
-                onChange={(e) => setShowPoints(e.target.checked)}
-            />
-            <CheckBoxForMap 
-                label="Показать полигоны"
-                type="checkbox"
-                checked={showPolygons}
-                onChange={(e) => setShowPolygons(e.target.checked)}
-            />
-        </div>
+            <div className="flex mb-3 gap-5">
+                <CheckBoxForMap 
+                    label="Показать точки"
+                    type="checkbox"
+                    checked={showPoints}
+                    onChange={(checked) => setShowPoints(checked)}
+                />
+                <CheckBoxForMap 
+                    label="Показать полигоны"
+                    type="checkbox"
+                    checked={showPolygons}
+                    onChange={(checked) => setShowPolygons(checked)}
+                />
+            </div>
             <div ref={mapRef} className="w-full h-96" />
         </div>
     );
