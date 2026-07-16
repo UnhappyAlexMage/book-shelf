@@ -10,7 +10,7 @@ export const handlerGetUserRecords = http.get("/api/allrecord", ({ request }) =>
     console.log("Полный URL запроса в MSW:", request.url);
     console.log("Пойманный authorId в MSW:", authorId);
 
-    let filteredRecords = recordUsers.filter(record => record.authorId === authorId);
+    const filteredRecords = recordUsers.filter(record => record.authorId === authorId);
     return HttpResponse.json(filteredRecords, { status: 200 });
 });
 

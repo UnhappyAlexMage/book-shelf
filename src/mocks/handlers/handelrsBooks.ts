@@ -3,7 +3,7 @@ import { libraryBooks } from '../data/books';
 
 //GET: /api/books — список всех книжек
 export const handlerGetAllBooks = http.get("/api/allbooks", () => { 
-    let filteredBooks = [...libraryBooks];
+    const filteredBooks = [...libraryBooks];
     return HttpResponse.json(filteredBooks, { status: 200 });
 });
 
