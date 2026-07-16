@@ -3,7 +3,7 @@ import type { IconType } from "react-icons";
 interface PropsConctacsLink {
     label: string;
     href: string;
-    icon: IconType | any;
+    icon: IconType;
     target?: string;
     rel?: string;
 }
