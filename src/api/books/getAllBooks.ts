@@ -10,15 +10,15 @@ export const getAllBooks = async () : Promise<LibraryBook[]> => {
         if (axios.isAxiosError(error)) {
             if (error.response) {
                 const statusServer = error.response.status;
-                const messangeServer = error.response.data?.message || "Ошибка сервера";
-                throw new Error(`Ошибка ${statusServer}: ${messangeServer}`);
+                const messageServer = error.response.data?.message || "Ошибка сервера";
+                throw new Error(`Ошибка ${statusServer}: ${messageServer}`, { cause: error });
             } 
             else if (error.request) {
-                throw new Error(`Ошибка соединения с сервером ${error.status}`);
+                throw new Error(`Ошибка соединения с сервером ${error.status}`, { cause: error });
             }
 
         }
-        throw new Error("Произошла ошибка в getAllBooks");
+        throw new Error("Произошла ошибка в getAllBooks", {cause: error} );
     }
 };
 
