@@ -20,3 +20,7 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sw?
+
+.vs
+bin
+obj
