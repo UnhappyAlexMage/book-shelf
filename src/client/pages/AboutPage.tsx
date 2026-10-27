@@ -50,6 +50,8 @@ export default function AboutPage() {
                         <li>Zustand</li>
                         <li>Yup + React Hook Form</li>
                         <li>React Icons</li>
+                        <li>Open Street Map</li>
+                        <li>Eslint</li>
                     </ul>
                     <p className='text-slate-600 w-full'>
                         В дальнейшей реализации проекта, будут использованы следующие технологии: добавление базы данных (PostgreSQL) - хранение и сохранение данных,
