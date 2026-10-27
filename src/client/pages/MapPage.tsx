@@ -46,11 +46,11 @@ export default function MapPage () {
 
         const areaPolygon = new Feature({
             geometry: new Polygon([[
-                fromLonLat([61.25, 55.10]), // Левый нижний угол
-                fromLonLat([61.55, 55.10]), // Правый нижний угол
-                fromLonLat([61.55, 55.22]), // Правый верхний угол
-                fromLonLat([61.25, 55.22]), // Левый верхний угол
-                fromLonLat([61.25, 55.10]), // Замыкаем полигон
+                fromLonLat([61.25, 55.10]),
+                fromLonLat([61.55, 55.10]),
+                fromLonLat([61.55, 55.22]),
+                fromLonLat([61.25, 55.22]),
+                fromLonLat([61.25, 55.10]),
             ]]),
         });
         const polygonsLayer = new VectorLayer({
